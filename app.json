@@ -4,10 +4,10 @@
     "slug": "wisedoctor",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/wslogo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/wise-doctorbg.png",
+      "image": "./assets/newbg.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/wslogo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.yourcompany.yourappname",

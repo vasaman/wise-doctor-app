@@ -1,7 +1,7 @@
 import React from "react";
 
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import { signOut } from "firebase/auth";
+import { signOut, getAuth } from "firebase/auth";
 // import { auth } from "../../firebaseConfig";
 import app from "../../firebaseConfig";
 

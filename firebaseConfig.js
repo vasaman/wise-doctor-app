@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { getApps, getApp, initializeApp } from "firebase/app";
 import { initializeAuth, getReactNativePersistence  } from "firebase/auth";
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -11,6 +11,7 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 const firebaseConfig = {
   apiKey: "AIzaSyDHwRf-fbzSLVutvMNR62u4FcOf8wePu48",
   authDomain: "wise-doctor-6d541.firebaseapp.com",
+  databaseURL: "https://wise-doctor-6d541-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "wise-doctor-6d541",
   storageBucket: "wise-doctor-6d541.appspot.com",
   messagingSenderId: "369224307971",
@@ -30,9 +31,17 @@ const firebaseConfig = {
 
 
 };
+let  app
+
+if (!getApps() || getApps().length === 0 ) {
+  app = initializeApp(firebaseConfig);
+}
+else {
+  app = firebase.getApp
+}
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
 
 // initialize auth
 initializeAuth(app, {
