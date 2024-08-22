@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Button from "../components/button/Button";
 import InputBar from "../components/InputBar";
-import {  getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../firebaseConfig";
-import app from "../../firebaseConfig";
+import {  signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
+// import app from "../../firebaseConfig";
 
 import { Formik } from "formik";
 import ErrorHandler, { showTopMessage } from "../utils/ErrorHandler";
@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
 
     function handleFormSubmit(formValues) {
-        const auth = getAuth(app);
+        // const auth = getAuth(app);
 
         setLoading(true); // İşlem başladığında yüklemeyi etkinleştir
 
@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
             formValues.password
         )
             .then((res) => {
-                showTopMessage("Giriş Başarılı !", "success");
+                showTopMessage("Login succesfull !", "success");
                 setLoading(false); // İşlem tamamlandığında yüklemeyi devre dışı bırak
                 goToUserProfile();
             })

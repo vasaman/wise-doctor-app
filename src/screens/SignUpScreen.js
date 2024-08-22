@@ -5,10 +5,8 @@ import Button from "../components/button/Button";
 import InputBar from "../components/InputBar";
 import { getAuth } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import firestore from "@react-native-firebase/firestore";
-
-// import { auth } from "../../firebaseConfig";
-import app from "../../firebaseConfig";
+import { auth, db } from "../../firebaseConfig";
+// import app from "../../firebaseConfig";
 
 import { Formik } from "formik";
 import ErrorHandler, { showTopMessage } from "../utils/ErrorHandler";
@@ -25,7 +23,7 @@ export default function SignUpScreen() {
     const [loading, setLoading] = useState(false);
 
     function handleFormSubmit(formValues) {
-        const auth = getAuth(app);
+        // const auth = getAuth(app);
 
         setLoading(true);
 
